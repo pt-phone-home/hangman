@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 data-translate="title">Hangman</h1>
+    <button id="toggle-language" class="toggle-language">Toggle Language</button>
+    <p id="hangman-subheading" class="hangman-subheading" data-translate="subheading">Find the hidden word - Enter a letter</p>
+    <div class="quit-container" id="quit-container">
+        <button id="try-another-word" data-translate="tryAnotherWord">Try another word</button>
+        <p data-translate="or">or</p>
+        <a href="#" id="reset-game-button" class="reset-game-button" data-translate="resetGame">reset game</a>
+    </div>
+    
+    <!-- MAIN GAME CONTAINER -->
+    <div class="game-container" id="game-container">
+        <svg height="250" width="200" class="figure-container">
+            <!-- ROD -->
+            <line x1="60" y1="20" x2="140" y2="20"></line>
+            <line x1="140" y1="20" x2="140" y2="50"></line>
+            <line x1="60" y1="20" x2="60" y2="230"></line>
+            <line x1="20" y1="230" x2="100" y2="230"></line>
+
+            <!-- HEAD -->
+             <circle cx="140" cy="70" r="20" class="figure-part"></circle>
+
+             <!--BODY -->
+             <line x1="140" y1="90" x2="140" y2="150" class="figure-part"></line>
+
+             <!-- ARMS -->
+             <line x1="140" y1="120" x2="120" y2="100" class="figure-part"></line>
+             <line x1="140" y1="120" x2="160" y2="100" class="figure-part"></line>
+
+             <!-- LEGS -->
+             <line x1="140" y1="150" x2="120" y2="180" class="figure-part"></line>
+             <line x1="140" y1="150" x2="160" y2="180" class="figure-part"></line>
+        </svg>
+        <div class="wrong-letters-container">
+            <div id="wrong-letters"></div>
+        </div>
+        <div class="word" id="word"></div>
+        
+        
+    </div>
+    
+    <!-- INSTRUCTIONS CONTAINER -->
+    <div class="instructions-container" id="instructions-container">
+        <p data-translate="teachersInstructions1">Teachers, click below to create a list of words based on a topic of interest to you and your students</p>
+        <p data-translate="teachersInstructions2">A random word will be chosen from this list once you start your game of Hangman</p>
+        <button id="input-words-button" class="input-words-button" data-translate="createWordList">Create word list</button>
+    </div>
+
+    <!-- POPUP CONTAINER -->
+    <div class="popup-container" id="popup-container">
+        <div class="popup">
+            <h2 id="final-message" data-translate="finalMessage"></h2>
+            <button id="play-button" data-translate="playAgain">Play Again</button>
+            <small data-translate="playAgainHint">Play again lets you start again using one of the words you input earlier</small>
+            <p class="or-reset-game" data-translate="or">Or</p>
+            <a href="#" id="reset-game-button-end" data-translate="resetGameEnd">Reset Game</a>
+            <small data-translate="resetGameHint">Resetting game clears all the words you entered previously</small>
+        </div>
+        
+    </div>
+
+    <!-- FORM FOR ENTERING WORDS -->
+    <div class="form-container" id="form-container">
+        <form id="submit-words">
+            <div>
+                <label for="word1" data-translate="firstWord">First Word</label>
+                <input type="text" name="words">
+            </div>
+            <div>
+                <label for="word2" data-translate="secondWord">Second Word</label>
+                <input type="text" name="words">
+            </div>
+            <div>
+                <label for="word3" data-translate="thirdWord">Third Word</label>
+                <input type="text" name="words">
+            </div>
+            <div>
+                <label for="word4" data-translate="fourthWord">Fourth Word</label>
+                <input type="text" name="words">
+            </div>
+            <div>
+                <label for="word5" data-translate="fifthWord">Fifth Word</label>
+                <input type="text" name="words">
+            </div>
+            <div>
+                <input type="submit" name="submit-words">
+            </div>
+            <div>
+                <button id="input-words-cancel-button" data-translate="cancel">Cancel</button>
+            </div>
+        </form>
+    </div>
+    <!-- Notification -->
+     <div class="notification-container" id="notification-container">
+        <p data-translate="notification">You have already entered this letter</p>
+     </div>
+    <script src="script.js" type="module"></script>
+</body>
+</html>

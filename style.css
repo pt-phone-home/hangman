@@ -1,0 +1,263 @@
+:root {
+    --primary-color: #34495e;
+    --primary-color-light: #3e5369;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #34495e;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 80vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+h1 {
+    margin: 20px 0 0 ;
+}
+
+.hangman-subheading {
+    display: none;
+}
+
+.game-container {
+    display: none;
+    /* display: flex; */
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px 30px;
+    position: relative;
+    margin: auto;
+    height: 350px;
+    width: 450px;
+}
+
+.figure-container {
+    fill: transparent;
+    stroke: white;
+    stroke-width: 4px;
+    stroke-linecap: round;
+}
+
+.figure-part {
+    display: none;
+}
+
+.wrong-letters-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+.wrong-letters-container p {
+    margin: 0 0 5px;
+}
+
+.wrong-letters-container span {
+    font-size: 24px;
+}
+
+.word {
+    display: flex;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.letter {
+    border-bottom: 3px solid #2980b9;
+    display: inline-flex;
+    font-size: 30px;
+    align-items: center;
+    justify-content: center;
+    margin: 0 3px;
+    height: 50px;
+    width: 20px;
+}
+
+.popup-container {
+    background-color: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* display: flex; */
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #2980b9;
+    border-radius: 5px;
+    box-shadow: 0 15px 10px 3px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+.popup button {
+    cursor: pointer;
+    background-color: white;
+    color: #2980b9;
+    border: 0;
+    margin-top: 20px;
+    padding: 12px 20px;
+    font-size: 16px;
+}
+
+.popup button:active {
+    transform: scale(.98);
+}
+
+.popup button:focus {
+    outline: 0;
+}
+
+.popup small {
+    padding: 5px;
+    margin-top: 5px;
+}
+
+.notification-container {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px 10px 0 0 ;
+    padding: 15px 20px;
+    position: absolute;
+    bottom: -50px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.notification-container p {
+    margin: 0;
+}
+
+.notification-container.show {
+    transform: translateY(-50px);
+}
+
+.instructions-container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.instructions-container button {
+    cursor: pointer;
+    margin-top: 10px;
+    padding: 8px 12px;
+    align-self: center;
+}
+
+.instructions-container button:active {
+    transform: scale(.98);
+}
+
+.form-container {
+    display: none;
+    /* display: flex; */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top:0;
+    left:0;
+    right: 0;
+    bottom: 0;
+}
+
+.form-container form {
+    background-color: var(--primary-color-light);
+    display: flex;
+    padding: 30px 20px;
+    flex-direction: column;
+    align-items: start;
+}
+
+.form-container form div {
+    margin-bottom: 12px;
+}
+
+.form-container form div label {
+    display:block;
+}
+
+.form-container form div input {
+    width: 220px;
+}
+
+.form-container form .cancel-submit-words {
+    display: flex;
+}
+
+.form-container form .cancel-submit-words button {
+    cursor: pointer;
+    /* margin-top: 5px; */
+    padding: 6px 10px;
+    width: 220px;
+    background-color: red;
+    color: white;
+}
+
+.form-container form .cancel-submit-words button:active {
+    transform: scale(.96);
+}
+
+
+.form-container form div input[type="submit"] {
+    cursor: pointer;
+    margin-top: 10px;
+    padding: 6px 10px;
+}
+
+.form-container form div input[type="submit"]:active {
+    transform: scale(.96);
+}
+
+.quit-container {
+    align-self:normal;
+    display: none;
+    /* display: flex; */
+    margin-top: 10px;
+    justify-content:center;
+    align-items: center;
+}
+
+.quit-container button, p {
+    margin-right: 12px;
+}
+
+.quit-container button {
+    cursor: pointer;
+    padding: 6px 10px;
+}
+
+.toggle-language {
+    cursor: pointer;
+    padding: 6px 10px;
+}
+
+.reset-game-button {
+    color: lightgray;
+}
+
+.reset-game-button:hover {
+    color: rgb(230, 225, 225);
+}
