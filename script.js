@@ -204,7 +204,7 @@ function onWordsSubmit(e) {
       `${
         lang === "en"
           ? "Please enter at least one word"
-          : "Iontráil ar a laghad focal amháin, le do thoil"
+          : "Iontráil focal amháin ar a laghad, le do thoil"
       }`
     );
     return;
